@@ -1,12 +1,26 @@
 #include<iostream>
 using namespace std;
 int main(){
-    //This code is for basic implementation of for loop
+    //This code prints fibbionacci series using iteration till user given terms of fibbionacci series
+    int prev1=0;
+    int prev2=1;
     int num;
     cin>>num;
-    for(int i=1;i<11;i++)//As seen there are three arguments inside for loop and they are (initialization;condition;update)
-    {
-        cout<<num<<" X "<<i<<" = "<<num*i<<endl;
+    if(num<=0){
+        cout<<"Invalid";
+    }
+    else if(num==1){
+        cout<<prev1;
+    }
+    else{
+        cout<<prev1<<endl;
+        cout<<prev2<<endl;
+        for(int iter = 2;iter<num;iter++){
+            int sum = prev1 + prev2;
+            cout<<sum<<endl;
+            prev1=prev2;
+            prev2=sum;
+        }
     }
     return 0;
 }
